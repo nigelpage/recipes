@@ -1,0 +1,38 @@
+syntax = "proto3";
+
+package groups;
+
+option go_package = "./proto_files";
+
+message FindGroupRequest {
+    string name = 1;
+}
+
+message AddOrUpdateGroupRequest {
+    string name = 1;
+    repeated string people = 2;
+    int32 owner = 3;
+    bool private = 4;
+}
+
+message DeleteGroupRequest {
+    string name = 1;
+    bool notifyMembers = 2;
+}
+
+message DeleteGroupResponse {
+    bool membersNotified = 1;
+}
+
+message GroupResponse {
+    string name = 1;
+    repeated string people = 2;
+    int32 owner = 3;
+    bool private = 4;
+}
+
+service GroupsService {
+    rpc FindGroup(FindGroupRequest) returns (GroupResponse);
+    rpc AddOrUpdateGroup(AddOrUpdateGroupRequest) returns (GroupResponse);
+    rpc DeleteGroup(DeleteGroupRequest) returns (DeleteGroupResponse);
+ }
