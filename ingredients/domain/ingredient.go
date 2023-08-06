@@ -13,14 +13,16 @@ type Ingredient struct {
 	alternates []uuid.UUID
 }
 
-type AccessIngredient interface {
+type IngredientAccess interface {
 	FindByName(name string) (ingredients []Ingredient, err error)
 	Delete() (err error)
 	Update() (err error)
 	GetAlternateIngredients() (ingredients []Ingredient, err error)
 }
 
-func NewIngredient(name string, description string) (ingredient Ingredient) {
-	ing := Ingredient{id: uuid.New(), Name: name, Description: description, alternates: []uuid.UUID{}}
-	return ing
+type IngredientStore interface {
+	Find(name string) (ingredients []Ingredient, err error)
+	Insert() (err error)
+	Update() (err error)
+	Delete() (err error)
 }
