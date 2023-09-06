@@ -5,4 +5,4 @@ import (
 	//"github.com/google/uuid"
 )
 
-type store struct {}
+type IngredientStore struct {}
