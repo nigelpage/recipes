@@ -1,7 +1,7 @@
 package domainInterfaces
 
 import (
-	"github.com/recipes/repositories"
+	"github.com/recipes/ingredients/repositories"
 
 	"github.com/google/uuid"
 )
