@@ -1,4 +1,4 @@
-package domainRepositories
+package repositories
 
 import (
 	//"github.com/ajstarks/svgo"
