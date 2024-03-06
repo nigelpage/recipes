@@ -1,4 +1,4 @@
-package ingredients
+package interfaces
 
 import (
 	"github.com/ajstarks/svgo"
@@ -20,7 +20,7 @@ type IngredientAccess interface {
 	GetAlternateIngredients() (ingredients []Ingredient, err error)
 }
 
-type IngredientStore interface {
+type IngredientRepository interface {
 	Find(name string) (ingredients []Ingredient, err error)
 	Insert() (err error)
 	Update() (err error)

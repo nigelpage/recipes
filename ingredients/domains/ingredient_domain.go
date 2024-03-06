@@ -1,12 +1,21 @@
-package ingredients
+package domainInterfaces
 
 import (
-	//"github.com/ajstarks/svgo"
+	"github.com/recipes/domains/repositories"
+
 	"github.com/google/uuid"
 )
 
+
 type ds struct {
 	store IngredientStore
+}
+
+type Ingredient struct {
+	id uuid.UUID
+	Name string
+	Description string
+	alternates []uuid.UUID
 }
 
 func NewIngredient(name string, description string) (ingredient Ingredient) {
