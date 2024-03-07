@@ -1,14 +1,14 @@
 package domainInterfaces
 
 import (
-	"github.com/recipes/ingredients/repositories"
+	"github.com/nigelpage/recipes/ingredients/repositories"
 
 	"github.com/google/uuid"
 )
 
 
 type ds struct {
-	store IngredientStore
+	store repositories.IngredientStore
 }
 
 type Ingredient struct {
